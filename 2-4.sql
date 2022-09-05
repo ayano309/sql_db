@@ -7,3 +7,4 @@ SELECT 口座番号,'カ)' || 名義 FROM 口座 WHERE 種別 = '3'
 SELECT DISTINCT  種別 AS 種別コード, CASE 種別 WHEN '1' THEN '普通' WHEN '2' THEN '当座' WHEN '3' THEN '別段' END AS 種別名 FROM 口座
 SELECT 口座番号,名義,CASE 残高 WHEN 残高 < 100000 THEN 'C'WHEN 残高 >= 100000 AND 残高 < 1000000 THEN 'B'ELSE 'A'END AS 残高ランク FROM 口座
 SELECT LENGTH(口座番号),LENGTH(REPLACE(名義,' ','')),LENGTH(CAST(残高 AS VARCHAR)) FROM 口座
+SELECT * FROM 口座 WHERE SUBSTRING(名義,1,5) LIKE '%カワ%'
